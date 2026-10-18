@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STARKLAB® — скоро</title>
+<style>
+:root{--paper:#f6f1ed;--ink:#211b1b;--wine:#8a1f2d;--line:#d9c9c6}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,sans-serif;color:var(--ink)}
+body{display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 15% 15%,#f4dce0,transparent 34%),radial-gradient(circle at 85% 80%,#e4ddf2,transparent 36%),var(--paper)}
+.page{width:min(680px,100%);padding:clamp(34px,7vw,76px);border:1px solid var(--line);background:rgba(255,255,255,.55);box-shadow:0 28px 80px rgba(48,31,34,.12)}
+.brand{font-size:13px;font-weight:800;letter-spacing:.14em}.languages{display:flex;gap:7px;margin-top:18px}.languages button{border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px 11px;font:inherit;font-size:11px;cursor:pointer}.languages button.active{background:var(--ink);color:#fff;border-color:var(--ink)}.eyebrow{margin:62px 0 18px;color:var(--wine);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+h1{max-width:10em;margin:0;font-size:clamp(38px,8vw,80px);line-height:.94;letter-spacing:-.06em;text-transform:uppercase}p{max-width:42em;margin:28px 0 0;font-size:15px;line-height:1.7;color:#665b5b}.back{display:inline-flex;margin-top:38px;padding:15px 19px;color:#fff;background:var(--wine);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.04em;transition:transform .25s,background .25s}.back:hover{background:#651522;transform:translateY(-3px)}
+@media(max-width:520px){.page{padding:30px 24px}.eyebrow{margin-top:50px}p{font-size:14px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="brand">STARKLAB®</div>
+  <div class="languages" role="group" aria-label="Language"><button type="button" data-lang="ua">UA</button><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div>
+  <p class="eyebrow" id="eyebrow">СОЦСЕТИ / СКОРО</p>
+  <h1 id="title">Страница скоро появится</h1>
+  <p id="copy">Пока эта страница ещё не создана. Мы обязательно добавим её совсем скоро.</p>
+  <a class="back" href="index.html">Вернуться на сайт ↗</a>
+</main>
+<script>
+(function(){
+  var key=new URLSearchParams(location.search).get('platform')||'social',lang='ru';
+  try{lang=localStorage.getItem('lang')||'ru'}catch(e){}
+  var data={
+    ru:{instagram:['Instagram','Инстаграм скоро появится','Пока страница Instagram ещё не создана. Мы обязательно добавим её совсем скоро.'],tiktok:['TikTok','ТикТок скоро появится','Пока страница TikTok ещё не создана. Мы обязательно добавим её совсем скоро.'],telegram:['Telegram-канал','Telegram-канал скоро появится','Пока Telegram-канал ещё не создан. Мы обязательно добавим его совсем скоро.']},
+    ua:{instagram:['Instagram','Інстаграм скоро з’явиться','Поки сторінку Instagram ще не створено. Ми обов’язково додамо її зовсім скоро.'],tiktok:['TikTok','ТікТок скоро з’явиться','Поки сторінку TikTok ще не створено. Ми обов’язково додамо її зовсім скоро.'],telegram:['Telegram-канал','Telegram-канал скоро з’явиться','Поки Telegram-канал ще не створено. Ми обов’язково додамо його зовсім скоро.']},
+    en:{instagram:['Instagram','Instagram is coming soon','The Instagram page is not ready yet. We will add it very soon.'],tiktok:['TikTok','TikTok is coming soon','The TikTok page is not ready yet. We will add it very soon.'],telegram:['Telegram channel','Telegram channel is coming soon','The Telegram channel is not ready yet. We will add it very soon.']}
+  };
+  var d=(data[lang]||data.ru)[key]||(data[lang]||data.ru).instagram;
+  document.documentElement.lang=lang==='ua'?'uk':lang;document.title='STARKLAB® — '+d[0];
+  document.getElementById('eyebrow').textContent=(lang==='en'?'SOCIALS / COMING SOON':lang==='ua'?'СОЦМЕРЕЖІ / СКОРО':'СОЦСЕТИ / СКОРО');
+  document.getElementById('title').textContent=d[1];document.getElementById('copy').textContent=d[2];
+  document.querySelector('.back').textContent=lang==='en'?'Back to website ↗':lang==='ua'?'Повернутися на сайт ↗':'Вернуться на сайт ↗';
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);b.onclick=function(){try{localStorage.setItem('lang',b.dataset.lang)}catch(e){}location.reload()}});
+})();
+</script>
+</body>
+</html>

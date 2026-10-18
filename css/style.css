@@ -160,3 +160,35 @@ body.dialog-open{overflow:hidden}
 /* balanced header and centered contact dialog */
 @media(min-width:861px){.hrow{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:24px}.brand{justify-self:start}.who{justify-self:end}.burger{justify-self:end;margin-left:0}.nav{justify-content:center}}
 .contact-dialog{position:fixed;inset:0;margin:auto;height:max-content;max-height:calc(100vh - 32px);overflow:auto}
+
+/* mobile polish */
+@media(max-width:700px){
+  html{scroll-padding-top:112px}
+  .shell{width:calc(100% - 28px)}
+  .hdr{padding-top:14px}
+  .hrow{gap:10px;row-gap:10px}
+  .brand .bt b{font-size:13px}.brand .bt small{font-size:7px}
+  .burger{width:38px;height:38px}.burger i{left:10px;right:10px}
+  .who{justify-content:space-between;padding:9px 0 3px;margin-top:2px;border-top:1px solid var(--rule)}
+  .nm{font-size:14px}.lang button{padding:7px 10px;font-size:10px}
+  .nav{padding:116px 24px 40px;gap:22px;font-size:clamp(20px,6vw,28px)}
+  .hero{min-height:100svh;padding:150px 0 62px}
+  .big{font-size:clamp(28px,10vw,44px);line-height:1.02}
+  .lead{font-size:11px;line-height:1.8;margin-top:24px}
+  .cta{width:100%;gap:10px;margin-top:28px}
+  .cta .btn{width:100%;justify-content:center;padding:14px 16px;font-size:10px}
+  .sec{padding:70px 0 20px}.row{padding:34px 0;gap:22px}.row h2{font-size:24px}
+  .chips{gap:7px}.chips li{padding:7px 9px;font-size:9px}
+  .section-head{padding-bottom:24px}.section-head .big2{font-size:clamp(24px,8vw,34px)}.section-note{font-size:11px;line-height:1.75;margin-top:16px}
+  #serviceList{gap:10px;margin-top:14px}.svc{min-height:0;padding:18px 16px 16px;gap:18px}.svc h3{font-size:17px}.svc-body p{font-size:11px;line-height:1.7}.svc-bottom{padding-top:13px}.svc .price b{font-size:21px}.svc .link{font-size:10px}
+  .thead{margin-bottom:22px;align-items:flex-end}.thead .big2{font-size:25px}.ctrl{gap:6px}.ctrl button{width:38px;height:38px}
+  .track{gap:14px;padding:0 14px;scroll-padding-left:14px}.card{flex-basis:calc(100vw - 28px)}.card small{margin-bottom:10px}.cl{gap:18px}.pv{width:100%;aspect-ratio:1.16}.card h3{font-size:16px}.card p{font-size:11px}.tags{font-size:10px;line-height:1.6}.prog{margin-top:24px}.note{font-size:10px}
+  .contact-card{padding:38px 18px 34px}.contact-card .giant{font-size:clamp(26px,8.4vw,38px)}.contact-card .lead{font-size:11px;line-height:1.8;margin-top:20px}.btn--big{width:100%;justify-content:center;padding:17px 20px;font-size:11px}.contact-card .soc{gap:9px}.tile{width:44px;height:44px;border-radius:12px}
+  .payment{padding-bottom:70px}.payment-card{padding:28px 18px;gap:26px}.payment-copy .big2{font-size:24px}.payment-intro{font-size:11px;line-height:1.7}.payment-point{grid-template-columns:34px 1fr;gap:11px;padding-bottom:16px}.payment-mark{width:30px;height:30px;font-size:15px}.payment-point b{font-size:11px}.payment-point p{font-size:10px}
+  .foot{padding-bottom:24px}.fcols{gap:24px;padding:36px 0}.foot h4{margin-bottom:14px}.foot p,.foot a{font-size:11px}.copy{font-size:9px;line-height:1.7}
+  .contact-dialog{width:calc(100% - 20px);max-height:calc(100svh - 20px)}.dialog-card{padding:30px 18px 22px}.dialog-card h2{font-size:clamp(24px,8vw,34px)}.dialog-options{gap:8px;margin-top:22px}.dialog-option{padding:13px 11px}
+}
+@media(max-width:380px){
+  .shell{width:calc(100% - 24px)}.brand .bt b{font-size:12px}.nm{font-size:13px}.lang button{padding-inline:8px}
+  .hero{padding-top:142px}.big{font-size:clamp(26px,9.6vw,38px)}.svc{padding-inline:14px}.svc-bottom{align-items:flex-end}.svc .price b{font-size:20px}.svc .link{font-size:9px}.payment-card{padding-inline:15px}.dialog-options{grid-template-columns:1fr}
+}
